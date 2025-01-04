@@ -7,7 +7,8 @@ name: Step 2, Add a Dockerfile
 # This will run every time we push changes to `Dockerfile` on branch `cd`
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
-  workflow_dispatch:
+  workflow_dispatch:FROM nginx:1.17
+COPY . /usr/share/nginx/html
   push:
     branches:
       - cd
